@@ -1,0 +1,51 @@
+# Evaluación Parcial 3 - Automatización e Integración de Redes
+**Curso:** DRY7122 - Sección 005D  
+**Alumno:** Juan Manuel Rojas Bustamante  
+**Código Alumno:** 005D-16  
+**Cliente Asignado:** Servicios Portuarios Ltda  
+
+---
+
+## 📋 Resumen Ejecutivo
+Este proyecto documenta e implementa el ciclo completo de automatización para el aprovisionamiento, gestión y validación programática del Router corporativo corporativo `RTR-SERPOR` utilizando metodologías y herramientas avanzadas de DevOps en redes.
+
+---
+
+## 📁 Estructura General de la Solución
+El repositorio se encuentra organizado de la siguiente manera, cumpliendo estrictamente con la pauta de evaluación:
+
+* **`vars/`**: Centralización de parámetros globales en formato estructurado YAML.
+* **`fase1_baseline/`**: Respaldos y capturas del estado inicial del dispositivo (`pyATS` / `Genie`).
+* **`fase2_aprovisionamiento/`**: Playbook de aprovisionamiento global y copias de seguridad de configuración en formato `.cfg` (`Ansible`).
+* **`fase3_validacion_netconf/`**: Scripts en Python encargados del testeo de interfaces y parsing de árboles jerárquicos XML vía puerto 830 (`NETCONF`).
+* **`fase4_validacion_restconf/`**: Validaciones operacionales utilizando métodos HTTP y payloads estructurados JSON vía puerto 443 (`RESTCONF`).
+* **`fase5_reporte/`**: Resúmenes formales y bitácora consolidada de evidencias de la auditoría.
+
+---
+
+## 🛠️ Detalle de las Fases Ejecutadas
+
+### Fase 1: Baseline Inicial
+* **Herramienta:** `pyATS` / `Genie`
+* **Objetivo:** Capturar el estado de las interfaces del router antes de cualquier modificación.
+* **Evidencia:** Guardada en `fase1_baseline/evidencias/output_fase1.txt`.
+
+### Fase 2: Aprovisionamiento con Ansible
+* **Herramienta:** `Ansible`
+* **Cambios Aplicados:** Modificación de Hostname corporativo, descripción de la interfaz WAN GigabitEthernet1, creación e instanciación de la Interfaz Loopback 10 (`10.5.16.1/24`), despliegue de Banner MOTD de seguridad y servidor NTP global (`208.67.222.222`).
+* **Respaldo:** Configuración original almacenada satisfactoriamente en `fase2_aprovisionamiento/respaldo/backup_005D-16.cfg`.
+
+### Fase 3: Validación NETCONF
+* **Protocolo:** NETCONF sobre SSH (Puerto 830).
+* **Resultado:** Extracción automatizada del árbol de configuración nativo. La validación del hostname `RTR-SERPOR` retornó un estado exitoso: **`[ PASSED ]`**.
+* **Evidencia:** Guardada en `fase3_validacion_netconf/evidencias/output_fase3.txt`.
+
+### Fase 4: Validación RESTCONF
+* **Protocolo:** RESTCONF sobre HTTPS (Puerto 443).
+* **Resultado:** Consulta programática vía API REST utilizando la librería `requests`. Se comprobó que el servidor NTP configurado responde con código HTTP 200 y coincide con el parámetro asignado: **`[ PASSED ]`**.
+* **Evidencia:** Guardada en `fase4_validacion_restconf/evidencias/output_fase4.txt`.
+
+---
+
+## 🏁 Conclusión
+El router se encuentra operando bajo los estándares corporativos exigidos por **Servicios Portuarios Ltda**. Los scripts desarrollados demuestran la viabilidad, eficiencia y escalabilidad que ofrece la infraestructura como código (IaC) para entornos de red Cisco de misión crítica.

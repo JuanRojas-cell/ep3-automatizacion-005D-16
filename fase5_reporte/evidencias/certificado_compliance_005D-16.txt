@@ -1,0 +1,27 @@
+======================================================================
+CERTIFICADO DE COMPLIANCE Y AUDITORÍA DE INFRAESTRUCTURA DE RED
+======================================================================
+ID CERTIFICADO: CERT-005D-16-2026
+ALUMNO        : Juan Manuel Rojas Bustamante
+CÓDIGO ALUMNO : 005D-16
+CLIENTE       : Servicios Portuarios Ltda
+DISPOSITIVO   : RTR-SERPOR (CSR1kv)
+======================================================================
+
+RESULTADOS DE VERIFICACIÓN OPERACIONAL:
+
+[AUDITORÍA] Cambios de Configuración (Genie Diff)  : CONFORME
+[PROTOCOLO] Validación Hostname via NETCONF (830) : CONFORME
+[API REST]  Validación Servidor NTP via RESTCONF   : CONFORME
+
+======================================================================
+DICTAMEN FINAL: CONFORME
+======================================================================
+El dispositivo de red RTR-SERPOR cumple plenamente con los lineamientos
+de hardening, aprovisionamiento automatizado y políticas de compliance
+establecidas para el despliegue del cliente Servicios Portuarios Ltda.
+Se autoriza el cierre del ticket de implementación y el paso a operaciones.
+
+Auditor Responsable: Juan Manuel Rojas Bustamante
+Fecha de Emisión: 25/06/2026
+======================================================================
