@@ -1,0 +1,13 @@
+=== REPORTE DE VALIDACIÓN NETCONF ===
+Alumno Code : 005D-16
+Resultado   : Validación Hostname NETCONF: PASSED (Encontrado: RTR-SERPOR)
+=====================================
+
+<?xml version="1.0" ?>
+<rpc-reply xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" xmlns:nc="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="urn:uuid:7b535fe8-4cd3-4a15-83cd-745062c1d990">
+	<data>
+		<native xmlns="http://cisco.com/ns/yang/Cisco-IOS-XE-native">
+			<hostname>RTR-SERPOR</hostname>
+		</native>
+	</data>
+</rpc-reply>
