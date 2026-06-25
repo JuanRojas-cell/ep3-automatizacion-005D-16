@@ -1,20 +1,20 @@
 # vars/vars_juan_rojas.yaml
 alumno:
   codigo: "005D-16"
-  nombre: "Juan Rojas"
+  nombre: "Juan Rojas Bustamante"
 
 cliente:
-  empresa: "Servicios Portuarios Ltda"  # La empresa asignada de tu ficha
-  hostname: "RTR-SERPOR"          # El hostname corporativo asignado
+  empresa: "Servicios Portuarios Ltda"
+  hostname: "RTR-SERPOR"
 
 router:
-  ip: "192.168.56.102"
+  ip: "192.168.56.101"
   usuario: "cisco"
   password: "cisco123!"
   loopback_id: 10
-  loopback_ip: "10.5.16.1"        # La IP Loopback asignada para ti
+  loopback_ip: "10.5.16.1"
   loopback_mask: "255.255.255.0"
   loopback_prefix: "24"
-  descripcion_wan: "Enlace-WAN-Punta-Arenas" # Tu descripción asignada
-  banner: "ACCESO RESTRINGIDO - SERPOR"     # El texto de tu banner asignado
-  ntp_server: "8.8.8.8"          # La IP del servidor NTP asignada
+  descripcion_wan: "Enlace-WAN-Punta-Arenas"
+  banner: "ACCESO RESTRINGIDO - SERPOR"
+  ntp_server: "208.67.222.222"
