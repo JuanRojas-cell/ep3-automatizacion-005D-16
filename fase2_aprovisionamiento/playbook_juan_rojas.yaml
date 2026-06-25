@@ -1,0 +1,51 @@
+---
+- name: Aprovisionamiento Corporativo de Red - Servicios Portuarios Ltda
+  hosts: cisco_routers
+  gather_facts: no
+  vars_files:
+    - "../vars/vars_juan_rojas.yaml"
+
+  tasks:
+    - name: 1. Respaldar running-config actual (Antes del cambio)
+      ios_command:
+        commands: show running-config
+      register: config_original
+
+    - name: Guardar archivo de respaldo cfg
+      copy:
+        content: "{{ config_original.stdout[0] }}"
+        dest: "./respaldo/backup_005D-16.cfg"
+
+    - name: 2. Habilitar servicios de automatización (NETCONF y RESTCONF)
+      ios_config:
+        lines:
+          - netconf-yang
+          - restconf
+          - ip http secure-server
+
+    - name: 3. Configurar Hostname Corporativo
+      ios_config:
+        lines:
+          - hostname {{ cliente.hostname }}
+
+    - name: 4. Configurar Banner de Acceso Corporativo
+      ios_config:
+        lines:
+          - "banner motd #{{ router.banner }}#"
+
+    - name: 5. Configurar Servidor NTP Asignado
+      ios_config:
+        lines:
+          - "ntp server {{ router.ntp_server }}"
+
+    - name: 6. Configurar Descripción de Interfaz WAN (GE1)
+      ios_config:
+        parents: interface GigabitEthernet1
+        lines:
+          - description {{ router.descripcion_wan }}
+
+    - name: 7. Crear Interfaz Loopback de Gestión
+      ios_config:
+        parents: interface Loopback{{ router.loopback_id }}
+        lines:
+          - ip address {{ router.loopback_ip }} {{ router.loopback_mask }}

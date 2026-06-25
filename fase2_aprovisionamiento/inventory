@@ -1,0 +1,9 @@
+[cisco_routers]
+RTR-SERPOR ansible_host=192.168.56.101
+
+[cisco_routers:vars]
+ansible_user=cisco
+ansible_password=cisco123!
+ansible_network_os=ios
+ansible_connection=network_cli
+ansible_ssh_common_args='-o KexAlgorithms=diffie-hellman-group14-sha1 -o Ciphers=aes128-cbc'
