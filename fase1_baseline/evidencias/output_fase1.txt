@@ -1,0 +1,36 @@
+=== BASELINE SNAPSHOT ===
+Alumno: 005D-16
+Fecha: Thu 25 Jun 2026 03:41:49 PM UTC
+Host : labvm
+=========================
+
+Learning '['interface', 'platform', 'routing']' on devices '['CSR1kv']'
+[33mDevice CSR1kv Connection arguments is type <class 'list'>, expecting dictionary.[0m[39m
+  0%|          | 0/3 [00:00<?, ?it/s] 33%|███▎      | 1/3 [00:02<00:04,  2.03s/it] 67%|██████▋   | 2/3 [00:11<00:04,  4.13s/it]100%|██████████| 3/3 [00:11<00:00,  3.04s/it]100%|██████████| 3/3 [00:11<00:00,  3.86s/it]+==============================================================================+
+| Genie Learn Summary for device CSR1kv                                        |
++==============================================================================+
+|  Connected to CSR1kv                                                         |
+|  -   Log: evidencias/baseline_juan_rojas/connection_CSR1kv.txt               |
+|------------------------------------------------------------------------------|
+|  Learnt feature 'interface'                                                  |
+|  -  Ops structure:                                                           |
+| evidencias/baseline_juan_rojas/interface_iosxe_CSR1kv_ops.txt                |
+|  -  Device Console:                                                          |
+| evidencias/baseline_juan_rojas/interface_iosxe_CSR1kv_console.txt            |
+|------------------------------------------------------------------------------|
+|  Learnt feature 'platform'                                                   |
+|  -  Ops structure:                                                           |
+| evidencias/baseline_juan_rojas/platform_iosxe_CSR1kv_ops.txt                 |
+|  -  Device Console:                                                          |
+| evidencias/baseline_juan_rojas/platform_iosxe_CSR1kv_console.txt             |
+|------------------------------------------------------------------------------|
+|  Learnt feature 'routing'                                                    |
+|  -  Ops structure:                                                           |
+| evidencias/baseline_juan_rojas/routing_iosxe_CSR1kv_ops.txt                  |
+|  -  Device Console:                                                          |
+| evidencias/baseline_juan_rojas/routing_iosxe_CSR1kv_console.txt              |
+|==============================================================================|
+
+
+
+
