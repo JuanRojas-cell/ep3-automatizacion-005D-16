@@ -1,0 +1,16 @@
+=== REPORTE DE VALIDACIÓN RESTCONF ===
+Alumno Code : 005D-16
+Resultado   : Validación NTP RESTCONF: PASSED (Encontrado: 208.67.222.222)
+======================================
+
+{
+    "Cisco-IOS-XE-native:ntp": {
+        "Cisco-IOS-XE-ntp:server": {
+            "server-list": [
+                {
+                    "ip-address": "208.67.222.222"
+                }
+            ]
+        }
+    }
+}
